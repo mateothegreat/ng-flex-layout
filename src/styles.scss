@@ -1,7 +1,8 @@
-@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import '~@angular/material/theming';
 
 $header-height: 50px;
+$border-separator: 1.1px solid rgba(0, 0, 0, 0.12);
 
 body {
 
@@ -10,6 +11,8 @@ body {
     text-align: center;
     //font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-size: 15px;
+
 }
 
 .flex-wrapper {
@@ -119,12 +122,39 @@ body {
 
     flex: 0 0 200px;
     height: 100%;
-    background: #eee;
+    background: #fafafa;
+
+}
+
+.sidebar-left {
+
+    border-right: $border-separator;
+
+    mat-toolbar {
+
+        border-bottom: $border-separator;
+        background: unset;
+        height: 50px;
+
+        font-size: 15px;
+        color: #000;
+
+    }
+
+}
+
+.sidebar-right {
+
+    border-left: $border-separator;
 
 }
 
 a img {
 
     margin-right: 5px;
-    
+
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 50px;
 }
