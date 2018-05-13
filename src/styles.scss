@@ -9,9 +9,8 @@ body {
     padding: 0;
     margin: 0;
     text-align: center;
-    //font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-size: 15px;
+    font-family: Roboto, sans-serif;
+    font-size: 14px;
 
 }
 
@@ -120,7 +119,6 @@ body {
 
 .sidebar-left, .sidebar-right {
 
-    flex: 0 0 200px;
     height: 100%;
     background: #fafafa;
 
@@ -128,7 +126,18 @@ body {
 
 .sidebar-left {
 
+    flex: 0 0 250px;
+
     border-right: $border-separator;
+
+    mat-icon {
+
+        font-size: 24px;
+        //margin: 10px 5px 5px;
+
+        margin-right: 5px;
+        
+    }
 
     mat-toolbar {
 
@@ -145,6 +154,8 @@ body {
 
 .sidebar-right {
 
+    flex: 0 0 150px;
+
     border-left: $border-separator;
 
 }
@@ -157,4 +168,8 @@ a img {
 
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 50px;
+}
+
+page-header {
+
 }
