@@ -1,0 +1,22 @@
+<mat-toolbar>
+
+    <mat-icon>{{ sidebarLeftService.headerIcon }}</mat-icon>
+
+    {{ sidebarLeftService.headerTitle }}
+
+</mat-toolbar>
+
+<ul>
+
+    <li *ngFor="let item of sidebarLeftService.menu" [routerLink]="[ item.link ]">
+
+
+        <mat-icon>{{ item.icon }}</mat-icon>
+
+        <p>{{ item.title }}</p>
+
+
+    </li>
+
+</ul>
+

@@ -51,27 +51,15 @@
 
     <div class="content">
 
-        <div class="sidebar-left">
-
-            <mat-toolbar>
-
-                <mat-icon>business</mat-icon>
-
-                Left Sidebar
-
-            </mat-toolbar>
-
-        </div>
+        <app-sidebar-left></app-sidebar-left>
 
         <div class="main-wrapper">
 
-            <page-header></page-header>
+            <app-page-header></app-page-header>
 
             <div class="main">
 
-                <h1>Content Container</h1>
-
-                <p>This container has a height of 2000px and will overflow with a scrollbar.</p>
+                <router-outlet></router-outlet>
 
             </div>
 
@@ -92,3 +80,6 @@
     </div>
 
 </div>
+
+<ng-progress [color]="'blue'" [thick]="true"></ng-progress>
+<div toastContainer></div>

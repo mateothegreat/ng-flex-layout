@@ -1,0 +1,23 @@
+<div class="header-title">
+
+    {{ pageHeaderService.headerTitle }}
+
+</div>
+
+<div class="header-buttons">
+
+    <button *ngFor="let button of pageHeaderService.buttons"
+            [routerLink]="button.link"
+            mat-button>
+
+        <mat-icon *ngIf="button.icon">
+
+            {{ button.icon }}
+
+        </mat-icon>
+
+        {{ button.title }}
+
+    </button>
+
+</div>

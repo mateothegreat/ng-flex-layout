@@ -23,4 +23,3 @@ import {MatButtonModule, MatIconModule, MatMenuModule, MatToolbarModule} from '@
 })
 export class MaterialModule {
 }
-

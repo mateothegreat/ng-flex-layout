@@ -1,5 +1,9 @@
 @import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
 @import '~@angular/material/theming';
+@import '~@swimlane/ngx-datatable/release/index.css';
+@import '~@swimlane/ngx-datatable/release/themes/material.css';
+@import '~@swimlane/ngx-datatable/release/assets/icons.css';
+@import "~ngx-toastr/toastr.css";
 
 $header-height: 50px;
 $border-separator: 1.1px solid rgba(0, 0, 0, 0.12);
@@ -23,7 +27,7 @@ body {
 
 .header {
 
-    @include mat-elevation(2);
+    @include mat-elevation(4);
 
     display: flex;
     flex: 0 0 $header-height;
@@ -48,6 +52,7 @@ body {
 
         .toolbar-left {
 
+            display: flex;
             flex: 0 0 200px;
             //background: pink;
 
@@ -117,42 +122,21 @@ body {
 
 }
 
-.sidebar-left, .sidebar-right {
+app-sidebar-left, .sidebar-right {
 
     height: 100%;
     background: #fafafa;
+    //@include mat-elevation(1);
 
 }
 
-.sidebar-left {
-
-    flex: 0 0 250px;
-
-    border-right: $border-separator;
-
-    mat-icon {
-
-        font-size: 24px;
-        //margin: 10px 5px 5px;
-
-        margin-right: 5px;
-        
-    }
-
-    mat-toolbar {
-
-        border-bottom: $border-separator;
-        background: unset;
-        height: 50px;
-
-        font-size: 15px;
-        color: #000;
-
-    }
+app-sidebar-left {
 
 }
 
 .sidebar-right {
+
+    display: none;
 
     flex: 0 0 150px;
 
@@ -168,8 +152,4 @@ a img {
 
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 50px;
-}
-
-page-header {
-
 }
