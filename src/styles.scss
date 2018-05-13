@@ -1,0 +1,130 @@
+@import "~@angular/material/prebuilt-themes/purple-green.css";
+@import '~@angular/material/theming';
+
+$header-height: 50px;
+
+body {
+
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    //font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Roboto, "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.flex-wrapper {
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.header {
+
+    @include mat-elevation(2);
+
+    display: flex;
+    flex: 0 0 $header-height;
+    align-items: center;
+
+    background: #3f51b5;
+    color: #fff;
+
+    mat-toolbar {
+
+        min-height: auto;
+
+    }
+
+    mat-toolbar-row {
+
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+
+        height: 50px;
+
+        .toolbar-left {
+
+            flex: 0 0 200px;
+            //background: pink;
+
+        }
+
+        .toolbar-spacer {
+
+            flex: 1;
+
+        }
+
+        .toolbar-right {
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            flex: 0 0 300px;
+            //background: blueviolet;
+
+        }
+
+    }
+
+}
+
+.footer {
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    height: 100px;
+
+    background: #868e96;
+
+}
+
+.content {
+
+    position: absolute;
+    top: $header-height+3px;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+
+}
+
+.main-wrapper {
+
+    overflow: auto;
+    flex: 1;
+
+}
+
+.main {
+
+    height: 2000px;
+
+    padding: 20px;
+    text-align: center;
+
+}
+
+.sidebar-left, .sidebar-right {
+
+    flex: 0 0 200px;
+    height: 100%;
+    background: #eee;
+
+}
+
+a img {
+
+    margin-right: 5px;
+    
+}
