@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
     selector: 'form-buttons',
@@ -13,7 +13,7 @@ export class AppFormButtonsComponent {
 
     @Input() public buttonBackHide: boolean;
     @Input() public buttonBackPath: string;
-    @Input() public buttonBackLabel: string = '< Back';
+    @Input() public buttonBackLabel: string = 'Back';
     @Input() public buttonSaveHide: boolean;
     @Input() public buttonSaveLabel: string = 'Save Changes';
     @Input() public buttonDeleteHide: boolean;

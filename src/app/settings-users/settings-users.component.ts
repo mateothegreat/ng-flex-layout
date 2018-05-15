@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {AppPageHeaderService} from '../app-page-header/app-page-header.service';
+import { Component } from '@angular/core';
+import { AppPageHeaderService } from '../app-page-header/app-page-header.service';
 
 @Component({
     selector: 'app-settings-users',
@@ -17,6 +17,7 @@ export class SettingsUsersComponent {
     }, {
 
         title: 'View Users',
+        icon: 'list_alt',
         link: '/settings/users'
 
     }];

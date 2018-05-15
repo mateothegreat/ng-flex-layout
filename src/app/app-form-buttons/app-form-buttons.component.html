@@ -7,25 +7,33 @@
             (click)="_onButtonBackClick()"
             [routerLink]="[ buttonBackPath ]">
 
+        <mat-icon>arrow_left</mat-icon>
+
         {{ buttonBackLabel }}
 
     </button>
 
     <button mat-raised-button
+            color="accent"
             type="button"
             *ngIf="!buttonDeleteHide"
             class="btn btn-pink btn-block mg-b-10"
             (click)="_onButtonDeleteClick()">
+
+        <mat-icon>delete</mat-icon>
 
         {{ buttonDeleteLabel }}
 
     </button>
 
     <button mat-raised-button
+            color="primary"
             type="button"
             *ngIf="!buttonSaveHide"
             class="btn btn-primary btn-block mg-b-10"
             (click)="_onButtonSaveClick()">
+
+        <mat-icon>save</mat-icon>
 
         {{ buttonSaveLabel }}
 
