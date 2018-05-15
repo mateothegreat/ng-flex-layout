@@ -5,6 +5,7 @@ Getting started is simple if things are explained in a way that makes sense.
 
 Check it out!
 
+![screenshot](screenshot2.png)
 ![screenshot](screenshot.png)
 
 https://ng-flex-layout.herokuapp.com/
