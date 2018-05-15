@@ -1,7 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
-import {MaterialModule} from './shared/MaterialModule';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppSidebarLeftComponent} from './app-sidebar-left/app-sidebar-left.component';
 import {AppPageHeaderComponent} from './app-page-header/app-page-header.component';
@@ -18,6 +17,15 @@ import {NgxDatatableModule} from '@swimlane/ngx-datatable';
 import {NgProgressModule} from 'ngx-progressbar';
 import {ToastrModule} from 'ngx-toastr';
 import {SettingsUsersCreateComponent} from './settings-users-create/settings-users-create.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {SettingsRolesCreateComponent} from './settings-roles-create/settings-roles-create.component';
+import {SettingsRolesManageComponent} from './settings-roles-manage/settings-roles-manage.component';
+import {SettingsUsersManageComponent} from './settings-users-manage/settings-users-manage.component';
+import {HomeComponent} from './home/home.component';
+import {HomeDashboardComponent} from './home-dashboard/home-dashboard.component';
+import {AppFormButtonsComponent} from './app-form-buttons/app-form-buttons.component';
+import {MaterialModule} from './shared/MaterialModule';
+import { AppCardComponent } from './app-card/app-card.component';
 
 @NgModule({
 
@@ -32,7 +40,14 @@ import {SettingsUsersCreateComponent} from './settings-users-create/settings-use
         SettingsComponent,
         SettingsUsersComponent,
         SettingsRolesComponent,
-        SettingsUsersCreateComponent
+        SettingsUsersCreateComponent,
+        SettingsRolesCreateComponent,
+        SettingsRolesManageComponent,
+        SettingsUsersManageComponent,
+        HomeComponent,
+        HomeDashboardComponent,
+        AppFormButtonsComponent,
+        AppCardComponent
 
     ],
 
@@ -40,6 +55,9 @@ import {SettingsUsersCreateComponent} from './settings-users-create/settings-use
 
         BrowserModule,
         BrowserAnimationsModule,
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule,
 
         NgxDatatableModule,
         NgProgressModule,
@@ -52,9 +70,14 @@ import {SettingsUsersCreateComponent} from './settings-users-create/settings-use
             closeButton: true
         }),
 
-        MaterialModule,
+        // MaterialModule,
 
         RouterModule.forRoot([{
+
+            path: 'home',
+            component: HomeComponent
+
+        }, {
 
             path: 'settings',
             component: SettingsComponent
@@ -71,8 +94,29 @@ import {SettingsUsersCreateComponent} from './settings-users-create/settings-use
 
         }, {
 
+            path: 'settings/users/:id',
+            component: SettingsUsersManageComponent
+
+        }, {
+
             path: 'settings/roles',
             component: SettingsRolesComponent
+
+        }, {
+
+            path: 'settings/roles/create',
+            component: SettingsRolesCreateComponent
+
+        }, {
+
+            path: 'settings/roles/:id',
+            component: SettingsRolesManageComponent
+
+        }, {
+
+            path: '',
+            pathMatch: 'full',
+            redirectTo: 'home'
 
         }])
 

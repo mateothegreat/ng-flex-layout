@@ -1,4 +1,4 @@
-@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import '~@angular/material/theming';
 @import '~@swimlane/ngx-datatable/release/index.css';
 @import '~@swimlane/ngx-datatable/release/themes/material.css';
@@ -39,6 +39,7 @@ body {
     mat-toolbar {
 
         min-height: auto;
+        background: #3f51b5;
 
     }
 
@@ -152,4 +153,73 @@ a img {
 
 .mat-toolbar-row, .mat-toolbar-single-row {
     height: 50px;
+}
+
+.mat-form-field-label, .mat-select-value {
+
+    color: #000 !important;
+
+}
+
+.mat-form-field-infix {
+
+    border-bottom: 1px solid #666;
+
+}
+
+.mat-select-value {
+
+}
+
+form table td {
+
+    text-align: left;
+
+    mat-form-field:first-child {
+
+        margin-right: 10px;
+
+    }
+
+}
+
+.mat-card-header-text {
+
+    margin: 0 !important;
+
+}
+
+.mat-card-title {
+
+    font-size: 18px !important;
+
+}
+
+mat-card-content p {
+
+    text-align: left;
+    max-width: 600px;
+
+}
+
+.card {
+
+    @include mat-elevation(1);
+
+    .card-header {
+
+        text-align: left;
+
+        font-size: 16px;
+        background-color: #e1e1e1;
+
+        padding: 10px;
+
+    }
+
+    .card-content {
+
+        margin: 10px;
+
+    }
 }

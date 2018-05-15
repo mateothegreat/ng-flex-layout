@@ -11,11 +11,13 @@ export class SettingsRolesComponent {
     public static readonly PAGE_HEADER_BUTTONS: any[] = [{
 
         title: 'Create Role',
-        icon: 'add'
+        icon: 'add',
+        link: '/settings/roles/create'
 
     }, {
 
-        title: 'View Roles'
+        title: 'View Roles',
+        link: '/settings/roles'
 
     }];
 

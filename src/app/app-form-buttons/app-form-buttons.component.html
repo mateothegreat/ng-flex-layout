@@ -1,0 +1,34 @@
+<div class="form-buttons">
+
+    <button mat-raised-button
+            type="button"
+            *ngIf="!buttonBackHide"
+            class="btn btn-secondary btn-block mg-b-10"
+            (click)="_onButtonBackClick()"
+            [routerLink]="[ buttonBackPath ]">
+
+        {{ buttonBackLabel }}
+
+    </button>
+
+    <button mat-raised-button
+            type="button"
+            *ngIf="!buttonDeleteHide"
+            class="btn btn-pink btn-block mg-b-10"
+            (click)="_onButtonDeleteClick()">
+
+        {{ buttonDeleteLabel }}
+
+    </button>
+
+    <button mat-raised-button
+            type="button"
+            *ngIf="!buttonSaveHide"
+            class="btn btn-primary btn-block mg-b-10"
+            (click)="_onButtonSaveClick()">
+
+        {{ buttonSaveLabel }}
+
+    </button>
+
+</div>
