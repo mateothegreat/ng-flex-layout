@@ -8,8 +8,10 @@
     align-items: center;
 
     height: 49px;
-    border-bottom: 1.1px solid rgba(0, 0, 0, 0.12);
-    background: #fafafa;
+    //border-bottom: 1.1px solid rgba(0, 0, 0, 0.12);
+    //background: #fafafa;
+
+    margin: 10px;
 
     .header-title {
 
@@ -41,11 +43,12 @@
 
     }
 
-    h1 {
+    .header-title {
+
         padding: 10px;
 
         font-weight: normal;
-        font-size: 14px;
+        font-size: 19px;
 
     }
 

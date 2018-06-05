@@ -1,22 +1,33 @@
-<mat-toolbar>
+<mat-accordion  *ngFor="let group of sidebarLeftService.menu">
 
-    <mat-icon>{{ sidebarLeftService.headerIcon }}</mat-icon>
+    <mat-expansion-panel>
 
-    {{ sidebarLeftService.headerTitle }}
+        <mat-expansion-panel-header>
 
-</mat-toolbar>
+            <mat-panel-title>
 
-<ul>
+                <mat-icon>{{ group.icon }}</mat-icon>
 
-    <li *ngFor="let item of sidebarLeftService.menu" [routerLink]="[ item.link ]">
+                <p>{{ group.title }}</p>
 
+            </mat-panel-title>
 
-        <mat-icon>{{ item.icon }}</mat-icon>
+        </mat-expansion-panel-header>
 
-        <p>{{ item.title }}</p>
+        <ul>
 
+            <li *ngFor="let item of group.children"
+                [routerLink]="[ item.link ]"
+                routerLinkActive="on">
 
-    </li>
+                <mat-icon *ngIf="item.icon">{{ item.icon }}</mat-icon>
 
-</ul>
+                <p>{{ item.title }}</p>
 
+            </li>
+
+        </ul>
+
+    </mat-expansion-panel>
+
+</mat-accordion>

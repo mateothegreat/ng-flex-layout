@@ -5,8 +5,11 @@
 @import '~@swimlane/ngx-datatable/release/assets/icons.css';
 @import "~ngx-toastr/toastr.css";
 
-$header-height: 50px;
+$header-height: 60px;
 $border-separator: 1.1px solid rgba(0, 0, 0, 0.12);
+
+$theme-background-dark:     #232329;
+$theme-background-accent: #393940;
 
 body {
 
@@ -15,11 +18,17 @@ body {
     padding: 0;
     margin: 0;
 
+    background: #2a2a31;
+
     text-align: center;
-    font-family: Roboto, sans-serif;
-    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #fff;
 
 }
+
+
 
 .flex-wrapper {
 
@@ -36,13 +45,20 @@ body {
     flex: 0 0 $header-height;
     align-items: center;
 
-    background: #3f51b5;
+    background: #232329;
     color: #fff;
+
+    .header-logo img {
+
+        width: 140px;
+        margin-top: 12px;
+
+    }
 
     mat-toolbar {
 
         min-height: auto;
-        background: #3f51b5;
+        background: #232329;
 
     }
 
@@ -92,7 +108,7 @@ body {
 
     height: 100px;
 
-    background: #868e96;
+    background: #232329;
 
 }
 
@@ -114,6 +130,7 @@ body {
 
     overflow: auto;
     flex: 1;
+    background: #2a2a31;
 
 }
 
@@ -124,13 +141,14 @@ body {
     padding: 20px;
     text-align: center;
 
+
 }
 
 app-sidebar-left, .sidebar-right {
 
     height: 100%;
-    background: #fafafa;
-    //@include mat-elevation(1);
+    background: #232329;
+    @include mat-elevation(4);
 
 }
 
@@ -145,6 +163,7 @@ app-sidebar-left {
     flex: 0 0 150px;
 
     border-left: $border-separator;
+
 
 }
 
@@ -209,12 +228,14 @@ mat-card-content p {
 
     @include mat-elevation(1);
 
+    background-color: $theme-background-dark;
+
     .card-header {
 
         text-align: left;
 
         font-size: 16px;
-        background-color: #e1e1e1;
+        background-color: $theme-background-accent;
 
         padding: 10px;
 
@@ -225,4 +246,64 @@ mat-card-content p {
         margin: 10px;
 
     }
+}
+
+.mat-expansion-panel-header-title {
+
+    color: #605f7b;
+
+}
+
+mat-expansion-panel {
+
+    box-shadow: none !important;
+    background: none !important;
+    color: #ffffff !important;
+
+}
+.mat-expansion-panel-header {
+
+    padding: 0 18px !important;
+
+}
+
+.mat-expansion-panel-spacing {
+
+    margin: 0 !important;
+
+}
+
+.mat-expansion-panel-body {
+
+    padding: 0 !important;
+
+}
+
+.ngx-datatable.material {
+
+    background-color: $theme-background-dark;
+
+}
+.ngx-datatable.material .datatable-header .datatable-header-cell, datatable-footer {
+
+    color: #605f7b;
+
+}
+
+.mat-form-field-label, .mat-select-value {
+
+    color: #fff !important;
+
+}
+
+.mat-input-element {
+
+    font-size: 20px !important;
+
+}
+.mat-form-field-label-wrapper {
+
+    font-size: 16px;
+    color: #605f7b !important;
+
 }

@@ -3,11 +3,19 @@
     flex: 0 0 250px;
     border-right: 1.1px solid rgba(0, 0, 0, 0.12);
 
+    mat-panel-title {
+
+        mat-icon {
+
+            margin-top: 13px;
+
+        }
+
+    }
+
     mat-icon {
 
         font-size: 24px;
-        //margin: 10px 5px 5px;
-
         margin-right: 5px;
 
     }
@@ -29,6 +37,7 @@
         margin: 0;
         padding: 0;
         text-align: left;
+        background-color: #202027;
 
         li {
 
@@ -36,12 +45,14 @@
             align-items: center;
 
             cursor: pointer;
+            outline: none;
 
-            padding: 5px 5px 5px 20px;
+            padding-left: 49px;
 
             mat-icon {
 
                 font-size: 22px;
+                color: #605f7b;
 
             }
 
@@ -49,10 +60,11 @@
 
         li:hover {
 
-            background: #e1e1e1;
+            background: #46454d;
 
         }
 
     }
+
 
 }
