@@ -1,8 +1,8 @@
-import { Component, Input } from '@angular/core';
-import { Page } from './Page';
-import { PageRequest } from './PageRequest';
-import { Numbers } from './Numbers';
-import { BehaviorSubject, Observable } from 'rxjs';
+import {Component, Input} from '@angular/core';
+import {Page} from './Page';
+import {Numbers} from './Numbers';
+import {BehaviorSubject, Observable} from 'rxjs';
+import {Pageable} from './Pageable';
 
 @Component({
     selector: 'data-table',
@@ -53,17 +53,15 @@ export class DataTableComponent<T> {
 
     }
 
-    public setPage(pageRequest?: PageRequest, results?: any) {
-
-        pageRequest = pageRequest || new PageRequest();
+    public setPage(pageable: Pageable<T>) {
 
         this.page = new Page();
-        this.page.count = results.length || 0;
-        this.page.limit = (Numbers.getNumber(pageRequest.pageSize)) ? Numbers.getNumber(pageRequest.pageSize) : 20;
-        this.page.totalPages = Math.ceil(this.page.count / this.page.limit);
-        this.page.offset = Numbers.getNumber(pageRequest.offset);
+        this.page.count = pageable.numberOfElements || 0;
+        this.page.limit = pageable.pageable.pageSize;
+        this.page.totalPages = Math.ceil(this.page.count.valueOf() / this.page.limit.valueOf());
+        this.page.offset = Numbers.getNumber(pageable.pageable.offset);
 
-        this.rows = results;
+        this.rows = pageable.content;
 
     }
 

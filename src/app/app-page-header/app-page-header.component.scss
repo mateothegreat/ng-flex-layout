@@ -1,17 +1,17 @@
 @import '~@angular/material/theming';
+@import '../shared/scss/theme';
 
 :host {
 
-    //@include mat-elevation(1);
+    @include mat-elevation(2);
 
     display: flex;
     align-items: center;
 
     height: 49px;
     //border-bottom: 1.1px solid rgba(0, 0, 0, 0.12);
-    //background: #fafafa;
+    background: $theme-background-blue;
 
-    margin: 10px;
 
     .header-title {
 

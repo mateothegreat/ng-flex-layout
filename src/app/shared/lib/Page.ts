@@ -1,8 +1,8 @@
 export class Page {
 
-    public limit: number = 0;
-    public count: number = 0;
-    public totalPages: number = 0;
-    public offset: number = 0;
+    public limit: Number = 0;
+    public count: Number = 0;
+    public totalPages: Number = 0;
+    public offset: Number = 0;
 
 }

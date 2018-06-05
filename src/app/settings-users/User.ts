@@ -4,6 +4,8 @@ export class User {
 
     public status: string = Statuses.STATUS_ACTIVE;
 
+    public organization_id: Number;
+
     public id: number;
     public email: string;
     public username: string;

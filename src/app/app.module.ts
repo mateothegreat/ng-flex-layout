@@ -1,4 +1,3 @@
-import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -14,7 +13,7 @@ import {AutofocusDirective} from './shared/lib/AutofocusDirective';
 import {DataTableComponent} from './shared/lib/DataTableComponent';
 import {SessionService} from './shared/lib/SessionService';
 import {NgxDatatableModule} from '@swimlane/ngx-datatable';
-import {NgProgressModule} from 'ngx-progressbar';
+import {NgProgressInterceptor, NgProgressModule} from 'ngx-progressbar';
 import {ToastrModule} from 'ngx-toastr';
 import {SettingsUsersCreateComponent} from './settings-users-create/settings-users-create.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -25,7 +24,17 @@ import {HomeComponent} from './home/home.component';
 import {HomeDashboardComponent} from './home-dashboard/home-dashboard.component';
 import {AppFormButtonsComponent} from './app-form-buttons/app-form-buttons.component';
 import {MaterialModule} from './shared/MaterialModule';
-import { AppCardComponent } from './app-card/app-card.component';
+import {AppCardComponent} from './app-card/app-card.component';
+import {UsersService} from './settings-users/UsersService';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {SettingsOrganizationsComponent} from './settings-organizations/settings-organizations.component';
+import {BrowserModule} from '@angular/platform-browser';
+import {SettingsOrganizationsManageComponent} from './settings-organizations-manage/settings-organizations-manage.component';
+import {SettingsOrganizationsCreateComponent} from './settings-organizations-create/settings-organizations-create.component';
+import {OrganizationsService} from './settings-organizations/OrganizationsService';
+import { CamerasComponent } from './cameras/cameras.component';
+import { CamerasStatusComponent } from './cameras-status/cameras-status.component';
+import { MediaComponent } from './media/media.component';
 
 @NgModule({
 
@@ -47,7 +56,13 @@ import { AppCardComponent } from './app-card/app-card.component';
         HomeComponent,
         HomeDashboardComponent,
         AppFormButtonsComponent,
-        AppCardComponent
+        AppCardComponent,
+        SettingsOrganizationsComponent,
+        SettingsOrganizationsManageComponent,
+        SettingsOrganizationsCreateComponent,
+        CamerasComponent,
+        CamerasStatusComponent,
+        MediaComponent
 
     ],
 
@@ -57,6 +72,7 @@ import { AppCardComponent } from './app-card/app-card.component';
         BrowserAnimationsModule,
         MaterialModule,
         FormsModule,
+        HttpClientModule,
         ReactiveFormsModule,
 
         NgxDatatableModule,
@@ -81,6 +97,21 @@ import { AppCardComponent } from './app-card/app-card.component';
 
             path: 'settings',
             component: SettingsComponent
+
+        }, {
+
+            path: 'settings/organizations',
+            component: SettingsOrganizationsComponent
+
+        }, {
+
+            path: 'settings/organizations/create',
+            component: SettingsOrganizationsCreateComponent
+
+        }, {
+
+            path: 'settings/organizations/:id',
+            component: SettingsOrganizationsManageComponent
 
         }, {
 
@@ -124,10 +155,18 @@ import { AppCardComponent } from './app-card/app-card.component';
 
     providers: [
 
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: NgProgressInterceptor,
+            multi: true
+        },
+
         AppSidebarLeftService,
         AppPageHeaderService,
 
-        SessionService
+        UsersService,
+        SessionService,
+        OrganizationsService
 
     ],
 

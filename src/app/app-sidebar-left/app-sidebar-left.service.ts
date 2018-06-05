@@ -17,13 +17,13 @@ export class AppSidebarLeftService {
 
             children: [{
 
-                title: 'Manage Users',
-                link: '/settings/users'
+                title: 'Manage Cameras',
+                link: '/cameras'
 
             }, {
 
-                title: 'Roles & Permissions',
-                link: '/settings/roles'
+                title: 'Status & Health',
+                link: '/cameras/status'
 
             }]
 
@@ -34,22 +34,27 @@ export class AppSidebarLeftService {
 
             children: [{
 
-                title: 'Manage Users',
-                link: '/settings/users'
+                title: 'Manage Media',
+                link: '/media'
 
             }, {
 
-                title: 'Roles & Permissions',
-                link: '/settings/roles'
+                title: 'Media Export',
+                link: '/media/export'
 
             }]
 
         }, {
 
-            title: 'User Management',
-            icon: 'account_box',
+            title: 'Settings',
+            icon: 'settings',
 
             children: [{
+
+                title: 'Manage Organizations',
+                link: '/settings/organizations'
+
+            }, {
 
                 title: 'Manage Users',
                 link: '/settings/users'

@@ -18,11 +18,33 @@
 
                         <mat-form-field>
 
+                            <mat-select placeholder="Organization(s)"
+                                        formControlName="organization_id">
+
+                                <mat-option *ngFor="let organization of organizations" [value]="organization.id">
+
+                                    {{ organization.name }}
+
+                                </mat-option>
+
+                            </mat-select>
+
+                        </mat-form-field>
+
+                    </td>
+
+                </tr>
+
+                <tr>
+
+                    <td>
+
+                        <mat-form-field>
+
                             <input matInput
                                    appAutofocus
                                    placeholder="Email Address"
                                    formControlName="email"
-                                   [(ngModel)]="user.email"
                                    class="form-control">
 
                         </mat-form-field>
@@ -40,7 +62,6 @@
                             <input matInput
                                    placeholder="First Name"
                                    formControlName="firstname"
-                                   [(ngModel)]="user.firstname"
                                    class="form-control">
 
                         </mat-form-field>
@@ -50,7 +71,6 @@
                             <input matInput
                                    placeholder="Last Name"
                                    formControlName="lastname"
-                                   [(ngModel)]="user.lastname"
                                    class="form-control">
 
                         </mat-form-field>
@@ -68,7 +88,6 @@
                             <input matInput
                                    placeholder="Username"
                                    formControlName="username"
-                                   [(ngModel)]="user.username"
                                    class="form-control">
 
                         </mat-form-field>
@@ -78,7 +97,6 @@
                             <input matInput
                                    placeholder="Password"
                                    formControlName="password"
-                                   [(ngModel)]="user.password"
                                    class="form-control">
 
                         </mat-form-field>
@@ -94,8 +112,7 @@
                         <mat-form-field>
 
                             <mat-select placeholder="Account Status"
-                                        formControlName="status"
-                                        [(ngModel)]="user.status">
+                                        formControlName="status">
 
                                 <mat-option *ngFor="let status of statuses" [value]="status">
 
