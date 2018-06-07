@@ -1,8 +1,8 @@
-import {Injectable} from '@angular/core';
-import {User} from './User';
-import {Observable} from 'rxjs/Observable';
-import {APIClient} from '../shared/lib/APIClient';
-import {Pageable} from '../shared/lib/Pageable';
+import { Injectable } from '@angular/core';
+import { User } from './User';
+import { Observable } from 'rxjs/Observable';
+import { APIClient } from '../shared/lib/APIClient';
+import { Pageable } from '../shared/lib/Pageable';
 
 @Injectable()
 export class UsersService extends APIClient<User> {

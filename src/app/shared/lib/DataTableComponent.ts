@@ -1,8 +1,8 @@
-import {Component, Input} from '@angular/core';
-import {Page} from './Page';
-import {Numbers} from './Numbers';
-import {BehaviorSubject, Observable} from 'rxjs';
-import {Pageable} from './Pageable';
+import { Component, Input } from '@angular/core';
+import { Page } from './Page';
+import { Numbers } from './Numbers';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { Pageable } from './Pageable';
 
 @Component({
     selector: 'data-table',
@@ -17,6 +17,7 @@ import {Pageable} from './Pageable';
             [headerHeight]="50"
             [footerHeight]="50"
             [rowHeight]="'auto'"
+            [messages]="messages"
 
             [externalPaging]="true"
             [count]="page?.count"
@@ -38,6 +39,16 @@ export class DataTableComponent<T> {
     @Input() public columns: string[] = [];
     @Input() public rows: any[] = [];
     @Input() public page: Page = new Page();
+
+    @Input() public messages: {
+
+        emptyMessage: any
+
+    } = {
+
+        emptyMessage: '<span class="datatable-loading-text">Loading..</span>'
+
+    };
 
     private selected = [];
 
@@ -63,9 +74,18 @@ export class DataTableComponent<T> {
 
         this.rows = pageable.content;
 
+        console.log(this.rows);
+
+
+        if (this.page.count === 0) {
+
+            this.messages.emptyMessage = 'No data';
+
+        }
+
     }
 
-    public onSelect({selected}) {
+    public onSelect({ selected }) {
         console.log('Select Event', selected, this);
     }
 

@@ -1,8 +1,8 @@
-import {Component, ViewChild} from '@angular/core';
-import {AppPageHeaderService} from '../app-page-header/app-page-header.service';
-import {UsersService} from './UsersService';
-import {DataTableComponent} from '../shared/lib/DataTableComponent';
-import {User} from './User';
+import { Component, ViewChild } from '@angular/core';
+import { AppPageHeaderService } from '../app-page-header/app-page-header.service';
+import { UsersService } from './UsersService';
+import { DataTableComponent } from '../shared/lib/DataTableComponent';
+import { User } from './User';
 
 @Component({
     selector: 'app-settings-users',
@@ -36,6 +36,8 @@ export class SettingsUsersComponent {
         this.usersService.getPageable().subscribe((pageable: any) => {
 
             this.datatableRef.setPage(pageable);
+
+            console.log(pageable);
 
         });
 

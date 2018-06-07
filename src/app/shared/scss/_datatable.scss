@@ -1,0 +1,15 @@
+@import "theme";
+
+.datatable-row-group:hover *, datatable-body-cell:hover {
+
+    background-color: #b42695;
+
+}
+
+.datatable-loading-text {
+
+    color: $theme-foreground-pink;
+    font-style: italic;
+    vertical-align: middle;
+    
+}

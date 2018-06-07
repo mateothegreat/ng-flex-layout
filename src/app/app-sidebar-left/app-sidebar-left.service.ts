@@ -46,6 +46,18 @@ export class AppSidebarLeftService {
 
         }, {
 
+            title: 'Monitoring & Health',
+            icon: 'device_hub',
+
+            children: [{
+
+                title: 'Overview',
+                link: '/monitoring'
+
+            }]
+
+        }, {
+
             title: 'Settings',
             icon: 'settings',
 

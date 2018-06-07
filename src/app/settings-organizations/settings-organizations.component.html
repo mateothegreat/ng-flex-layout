@@ -6,11 +6,6 @@
 
         },{
 
-            name: 'Organization',
-            cellTemplate: organizationTemplate
-
-        },{
-
             name: 'Name'
 
         },{
@@ -22,17 +17,5 @@
             name:'Status'
 
      }]"></data-table>
-
-    <ng-template #organizationTemplate let-column="column" let-row="row" let-value="value">
-
-        {{ row.organization?.name }}
-
-    </ng-template>
-
-    <ng-template #nameTemplate let-column="column" let-row="row" let-value="value">
-
-        {{ row.firstname }}
-
-    </ng-template>
 
 </div>

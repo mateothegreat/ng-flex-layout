@@ -1,0 +1,31 @@
+@import "theme";
+
+.mat-tab-label-content mat-icon {
+
+    vertical-align: middle;
+
+}
+
+.mat-tab-label-content, .mat-tab-label-content mat-icon {
+
+    color: $theme-foreground-pink;
+
+}
+
+.mat-tab-label:hover {
+
+    background-color: $theme-background-blue;
+
+}
+
+.mat-tab-label-active {
+
+    background-color: $theme-background-accent;
+
+}
+
+.mat-card {
+
+    background-color: $theme-background-dark;
+
+}

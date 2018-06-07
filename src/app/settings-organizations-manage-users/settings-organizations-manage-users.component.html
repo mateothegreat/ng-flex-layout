@@ -1,9 +1,13 @@
 <div class="content-wrapper">
 
-    <data-table #datatable
-                [columns]="[{
+    <data-table #datatable [columns]="[{
 
             name:'Id'
+
+        },{
+
+            name: 'Organization',
+            cellTemplate: organizationTemplate
 
         },{
 
@@ -11,7 +15,11 @@
 
         },{
 
-            name:'Description'
+            name: 'Email'
+
+        },{
+
+            name:'Username'
 
         },{
 

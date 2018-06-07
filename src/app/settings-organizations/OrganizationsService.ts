@@ -1,21 +1,35 @@
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs/Observable';
-import {APIClient} from '../shared/lib/APIClient';
-import {Pageable} from '../shared/lib/Pageable';
-import {Organization} from './Organization';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { APIClient } from '../shared/lib/APIClient';
+import { Pageable } from '../shared/lib/Pageable';
+import { Organization } from './Organization';
 
 @Injectable()
 export class OrganizationsService extends APIClient<Organization> {
 
+    public static readonly URL_BASE: string = 'organizations';
+
     public getPageable(): Observable<Pageable<Organization>> {
 
-        return super._getPageable<Organization>(`organizations`);
+        return super._getPageable<Organization>(OrganizationsService.URL_BASE);
 
     }
 
-    public getById(): Observable<Organization> {
+    public getPageableUsers(organizationId: Number): Observable<Pageable<Organization>> {
 
-        return this.get<Organization>(`organizations`);
+        return super._getPageable<Organization>(`${OrganizationsService.URL_BASE}/${organizationId}/users`);
+
+    }
+
+    public getById(organizationId: Number): Observable<Organization> {
+
+        return this.get<Organization>(`organizations/${organizationId}`);
+
+    }
+
+    public create(obj: Organization): Observable<Organization> {
+
+        return this.post<Organization>(OrganizationsService.URL_BASE, obj);
 
     }
 
