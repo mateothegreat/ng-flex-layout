@@ -2,24 +2,31 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardComponent } from './card/card.component';
 import { MaterialModule } from './MaterialModule';
+import { DataTableComponent } from './lib/DataTableComponent';
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
 @NgModule({
 
     imports: [
 
         CommonModule,
-        MaterialModule
+        MaterialModule,
+        NgxDatatableModule,
 
     ],
     declarations: [
 
-        CardComponent
+        CardComponent,
+        DataTableComponent
 
     ],
     exports: [
 
         CardComponent,
-        MaterialModule
+        MaterialModule,
+        NgxDatatableModule,
+
+        DataTableComponent
 
     ]
 

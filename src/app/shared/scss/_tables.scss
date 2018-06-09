@@ -1,0 +1,22 @@
+@import "theme";
+
+table {
+
+    margin-top: 15px;
+
+}
+
+td {
+
+    padding: 10px;
+    font-size: 16px;
+
+    color: $theme-foreground-light;
+
+}
+
+tr td:first-child {
+
+    min-width: 200px;
+
+}

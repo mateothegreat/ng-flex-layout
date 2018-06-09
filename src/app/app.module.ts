@@ -10,7 +10,6 @@ import { SettingsComponent } from './settings/settings.component';
 import { SettingsUsersComponent } from './settings-users/settings-users.component';
 import { SettingsRolesComponent } from './settings-roles/settings-roles.component';
 import { AutofocusDirective } from './shared/lib/AutofocusDirective';
-import { DataTableComponent } from './shared/lib/DataTableComponent';
 import { SessionService } from './shared/lib/SessionService';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { NgProgressInterceptor, NgProgressModule } from 'ngx-progressbar';
@@ -32,21 +31,30 @@ import { BrowserModule } from '@angular/platform-browser';
 import { SettingsOrganizationsManageComponent } from './settings-organizations-manage/settings-organizations-manage.component';
 import { SettingsOrganizationsCreateComponent } from './settings-organizations-create/settings-organizations-create.component';
 import { OrganizationsService } from './settings-organizations/OrganizationsService';
-import { CamerasComponent } from './cameras/cameras.component';
-import { CamerasStatusComponent } from './cameras-status/cameras-status.component';
-import { MediaComponent } from './media/media.component';
 import { MonitoringModule } from './monitoring/monitoring.module';
 import { SharedModule } from './shared/shared.module';
 import { SettingsOrganizationsManageOverviewComponent } from './settings-organizations-manage-overview/settings-organizations-manage-overview.component';
 import { SettingsOrganizationsManageUsersComponent } from './settings-organizations-manage-users/settings-organizations-manage-users.component';
 import { SettingsOrganizationManageService } from './settings-organizations-manage/SettingsOrganizationManageService';
+import { SettingsUsersManageOverviewComponent } from './settings-users-manage-overview/settings-users-manage-overview.component';
+import { SettingsUsersManageRolesComponent } from './settings-users-manage-roles/settings-users-manage-roles.component';
+import { SettingsUsersManageService, } from './settings-users-manage/settings-users-manage-service';
+import { MediaModule } from './media/media.module';
+import { CamerasComponent } from './cameras/cameras.component';
+import { CamerasService } from './cameras/cameras.service';
+import { CamerasManageOverviewComponent } from './cameras-manage-overview/cameras-manage-overview.component';
+import { CamerasManageSettingsComponent } from './cameras-manage-settings/cameras-manage-settings.component';
+import { CamerasManageLiveFeedComponent } from './cameras-manage-live-feed/cameras-manage-live-feed.component';
+import { CamerasManageComponent } from './cameras-manage/cameras-manage.component';
+import { SettingsUsersManageRolesManageComponent } from './settings-users-manage-roles-manage/settings-users-manage-roles-manage.component';
+import { SettingsUsersManageRolesCreateComponent } from './settings-users-manage-roles-create/settings-users-manage-roles-create.component';
+import { SettingsRolesService } from './settings-users-manage-roles/settings-roles.service';
 
 @NgModule({
 
     declarations: [
 
         AutofocusDirective,
-        DataTableComponent,
 
         AppComponent,
         AppSidebarLeftComponent,
@@ -65,11 +73,17 @@ import { SettingsOrganizationManageService } from './settings-organizations-mana
         SettingsOrganizationsComponent,
         SettingsOrganizationsManageComponent,
         SettingsOrganizationsCreateComponent,
-        CamerasComponent,
-        CamerasStatusComponent,
-        MediaComponent,
         SettingsOrganizationsManageOverviewComponent,
         SettingsOrganizationsManageUsersComponent,
+        SettingsUsersManageOverviewComponent,
+        SettingsUsersManageRolesComponent,
+        CamerasComponent,
+        CamerasManageOverviewComponent,
+        CamerasManageSettingsComponent,
+        CamerasManageLiveFeedComponent,
+        CamerasManageComponent,
+        SettingsUsersManageRolesManageComponent,
+        SettingsUsersManageRolesCreateComponent
 
     ],
 
@@ -82,9 +96,10 @@ import { SettingsOrganizationManageService } from './settings-organizations-mana
         HttpClientModule,
         ReactiveFormsModule,
 
-        MonitoringModule,
         SharedModule,
-
+        MonitoringModule,
+        MediaModule,
+        // CamerasModule,
         NgxDatatableModule,
         NgProgressModule,
         ToastrModule.forRoot({
@@ -102,6 +117,16 @@ import { SettingsOrganizationManageService } from './settings-organizations-mana
 
             path: 'home',
             component: HomeComponent
+
+        }, {
+
+            path: 'cameras',
+            component: CamerasComponent
+
+        }, {
+
+            path: 'cameras/:id',
+            component: CamerasManageComponent
 
         }, {
 
@@ -174,10 +199,13 @@ import { SettingsOrganizationManageService } from './settings-organizations-mana
         AppSidebarLeftService,
         AppPageHeaderService,
 
+        CamerasService,
         UsersService,
         SessionService,
         OrganizationsService,
         SettingsOrganizationManageService,
+        SettingsUsersManageService,
+        SettingsRolesService
 
     ],
 

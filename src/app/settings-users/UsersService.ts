@@ -13,9 +13,9 @@ export class UsersService extends APIClient<User> {
 
     }
 
-    public getById(): Observable<User> {
+    public getById(userId: Number): Observable<User> {
 
-        return this.get<User>(`users`);
+        return this.get<User>(`users/${userId}`);
 
     }
 

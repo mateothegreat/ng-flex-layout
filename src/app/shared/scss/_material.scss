@@ -1,5 +1,11 @@
 @import "theme";
+@import '~@angular/material/theming';
 
+/**
+ *
+ * Material Tabs
+ *
+ */
 .mat-tab-label-content mat-icon {
 
     vertical-align: middle;
@@ -12,6 +18,18 @@
 
 }
 
+mat-tab-header {
+
+    margin-top: -3px;
+
+}
+
+.mat-tab-label {
+
+    outline: none;
+
+}
+
 .mat-tab-label:hover {
 
     background-color: $theme-background-blue;
@@ -21,11 +39,92 @@
 .mat-tab-label-active {
 
     background-color: $theme-background-accent;
+    @include mat-elevation(4);
 
 }
+
+mat-tab-body {
+
+    padding: 10px;
+
+    max-height: 500px;
+    overflow-y: auto;
+
+}
+
+//
+// Material Card
+//
 
 .mat-card {
 
     background-color: $theme-background-dark;
+
+    padding: 0 !important;
+    @include mat-elevation(6);
+
+}
+
+mat-card-title {
+
+    font-size: 23px !important;
+    padding: 10px;
+    color: $theme-foreground-menu;
+    margin-bottom: 0 !important;
+    background-color: #1e1e1f;
+
+}
+
+.mat-card-header-text {
+
+    margin: 0 !important;
+
+}
+
+mat-card-content {
+
+    margin: 0 !important;
+
+}
+
+mat-card-actions {
+
+    border-top: 1px solid $theme-background-accent;
+    background-color: #1e1e1f;
+
+    text-align: right;
+    padding: 5px !important;
+
+    margin: 0 !important;
+
+    button {
+
+        margin: 5px !important;
+
+    }
+
+}
+
+//
+// Material Toolbar
+//
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+    height: 50px;
+}
+
+.mat-form-field-label, .mat-select-value {
+
+    color: #000 !important;
+
+}
+
+.mat-form-field-infix {
+
+    border-bottom: 1px solid #999;
+
+}
+
+.mat-select-value {
 
 }

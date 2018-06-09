@@ -1,0 +1,47 @@
+<mat-card>
+
+    <mat-card-title>
+
+        Manage Camera {{ (usersManageService.user$ | async).username }}
+
+    </mat-card-title>
+
+    <mat-tab-group class="demo-tab-group">
+
+        <mat-tab>
+
+            <ng-template mat-tab-label>
+
+                <mat-icon>security</mat-icon>
+
+                Overview
+
+            </ng-template>
+
+            <div class="tab-content">
+
+
+            </div>
+
+        </mat-tab>
+
+        <mat-tab>
+
+            <ng-template mat-tab-label>
+
+                <mat-icon>supervised_user_circle</mat-icon>
+
+                Settings
+
+            </ng-template>
+
+            <div class="tab-content">
+
+
+            </div>
+
+        </mat-tab>
+
+    </mat-tab-group>
+
+</mat-card>

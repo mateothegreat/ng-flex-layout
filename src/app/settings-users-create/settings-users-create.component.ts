@@ -1,15 +1,15 @@
-import {Component} from '@angular/core';
-import {Statuses} from '../shared/lib/Statuses';
-import {User} from '../settings-users/User';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
-import {AppPageHeaderService} from '../app-page-header/app-page-header.service';
-import {SettingsUsersComponent} from '../settings-users/settings-users.component';
-import {OrganizationsService} from '../settings-organizations/OrganizationsService';
-import {Pageable} from '../shared/lib/Pageable';
-import {Organization} from '../settings-organizations/Organization';
-import {UsersService} from '../settings-users/UsersService';
-import {Router} from '@angular/router';
-import {ToastrService} from 'ngx-toastr';
+import { Component } from '@angular/core';
+import { Statuses } from '../shared/lib/Statuses';
+import { User } from '../settings-users/User';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AppPageHeaderService } from '../app-page-header/app-page-header.service';
+import { SettingsUsersComponent } from '../settings-users/settings-users.component';
+import { OrganizationsService } from '../settings-organizations/OrganizationsService';
+import { Pageable } from '../shared/lib/Pageable';
+import { Organization } from '../settings-organizations/Organization';
+import { UsersService } from '../settings-users/UsersService';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
 
@@ -59,7 +59,8 @@ export class SettingsUsersCreateComponent {
         this.usersService.create(this.formGroup.value).subscribe((user: User) => {
 
             this.toastr.success(`The user "${user.username}" has been created!`);
-            // this.router.navigate([`/settings/users/${user.id}`]);
+
+            this.router.navigate([`/settings/users/${user.id}`]);
 
         });
 

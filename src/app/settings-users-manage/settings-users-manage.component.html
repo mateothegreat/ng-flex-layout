@@ -1,3 +1,61 @@
-<p>
-  settings-users-manage works!
-</p>
+<mat-card>
+
+    <mat-card-title>
+
+        Manage User {{ (usersManageService.user$ | async).username }}
+
+    </mat-card-title>
+
+    <mat-card-content>
+
+        <mat-tab-group class="demo-tab-group">
+
+            <mat-tab>
+
+                <ng-template mat-tab-label>
+
+                    <mat-icon>account_box</mat-icon>
+
+                    Overview
+
+                </ng-template>
+
+                <div class="tab-content">
+
+                    <app-settings-users-manage-overview></app-settings-users-manage-overview>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab>
+
+                <ng-template mat-tab-label>
+
+                    <mat-icon>security</mat-icon>
+
+                    Roles & Permissions
+
+                </ng-template>
+
+                <div class="tab-content">
+
+                    <app-settings-users-manage-roles></app-settings-users-manage-roles>
+
+                </div>
+
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </mat-card-content>
+
+
+    <mat-card-actions>
+
+        <button mat-raised-button>SHARE</button>
+        <button mat-raised-button color="warn">DELETE</button>
+
+    </mat-card-actions>
+
+</mat-card>

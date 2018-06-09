@@ -1,0 +1,36 @@
+<div class="content-wrapper">
+
+    <data-table #datatable [columns]="[{
+
+            name:'Id'
+
+        },{
+
+            name: 'Name'
+
+        },{
+
+            name:'Description'
+
+        },{
+
+            name:'Users'
+
+        },{
+
+            name:'Status'
+
+     }]"></data-table>
+
+
+    <ng-template #nameTemplate let-column="column" let-row="row" let-value="value">
+
+        <span *ngFor="let user in row.users">
+
+            {{ user.username }}
+
+        </span>
+
+    </ng-template>
+
+</div>

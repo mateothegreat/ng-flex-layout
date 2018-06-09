@@ -1,0 +1,42 @@
+<table>
+
+    <tr>
+
+        <td>Username:</td>
+        <td>{{ (usersManageService.user$ | async).username }}</td>
+
+    </tr>
+
+    <tr>
+
+        <td>Email:</td>
+        <td>{{ (usersManageService.user$ | async).email }}</td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>First Name:</td>
+        <td>{{ (usersManageService.user$ | async).firstname }}</td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>Last Name:</td>
+        <td>{{ (usersManageService.user$ | async).lastname }}</td>
+
+    </tr>
+
+
+    <tr>
+
+        <td>Status:</td>
+        <td>{{ (usersManageService.user$ | async).status }}</td>
+
+    </tr>
+
+
+</table>

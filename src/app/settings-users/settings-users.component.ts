@@ -3,6 +3,7 @@ import { AppPageHeaderService } from '../app-page-header/app-page-header.service
 import { UsersService } from './UsersService';
 import { DataTableComponent } from '../shared/lib/DataTableComponent';
 import { User } from './User';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-settings-users',
@@ -28,7 +29,8 @@ export class SettingsUsersComponent {
     }];
 
     public constructor(private pageHeaderService: AppPageHeaderService,
-                       private usersService: UsersService) {
+                       private usersService: UsersService,
+                       private router: Router) {
 
         pageHeaderService.headerTitle = 'Manage Users';
         pageHeaderService.buttons = SettingsUsersComponent.PAGE_HEADER_BUTTONS;
@@ -37,7 +39,19 @@ export class SettingsUsersComponent {
 
             this.datatableRef.setPage(pageable);
 
-            console.log(pageable);
+        });
+
+    }
+
+    public ngOnInit(): void {
+
+        this.datatableRef.clicks$.subscribe((user: User) => {
+
+            if (user.id) {
+
+                this.router.navigate([`/settings/users/${user.id}`]);
+
+            }
 
         });
 
