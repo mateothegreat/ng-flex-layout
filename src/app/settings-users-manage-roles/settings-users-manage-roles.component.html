@@ -25,7 +25,7 @@
 
     <ng-template #nameTemplate let-column="column" let-row="row" let-value="value">
 
-        <span *ngFor="let user in row.users">
+        <span *ngFor="let user of row.users">
 
             {{ user.username }}
 
