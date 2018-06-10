@@ -2,7 +2,7 @@
 
     <mat-card-title>
 
-        Manage Camera {{ (usersManageService.user$ | async).username }}
+        Manage Camera {{ (camerasManageService.camera$ | async).name }}
 
     </mat-card-title>
 
@@ -20,6 +20,7 @@
 
             <div class="tab-content">
 
+                <app-cameras-manage-overview></app-cameras-manage-overview>
 
             </div>
 
@@ -29,7 +30,43 @@
 
             <ng-template mat-tab-label>
 
-                <mat-icon>supervised_user_circle</mat-icon>
+                <mat-icon>airplay</mat-icon>
+
+                Live Feed
+
+            </ng-template>
+
+            <div class="tab-content">
+
+                <app-cameras-manage-live-feed></app-cameras-manage-live-feed>
+
+            </div>
+
+        </mat-tab>
+
+        <mat-tab>
+
+            <ng-template mat-tab-label>
+
+                <mat-icon>subscriptions</mat-icon>
+
+                Playback
+
+            </ng-template>
+
+            <div class="tab-content">
+
+                <app-cameras-manage-playback></app-cameras-manage-playback>
+
+            </div>
+
+        </mat-tab>
+
+        <mat-tab>
+
+            <ng-template mat-tab-label>
+
+                <mat-icon>settings</mat-icon>
 
                 Settings
 
@@ -37,6 +74,25 @@
 
             <div class="tab-content">
 
+                <app-cameras-manage-settings></app-cameras-manage-settings>
+
+            </div>
+
+        </mat-tab>
+
+        <mat-tab>
+
+            <ng-template mat-tab-label>
+
+                <mat-icon>screen_share</mat-icon>
+
+                Sharing
+
+            </ng-template>
+
+            <div class="tab-content">
+
+                <app-cameras-manage-sharing></app-cameras-manage-sharing>
 
             </div>
 

@@ -1,45 +1,59 @@
 <mat-card>
 
-    <mat-tab-group class="demo-tab-group">
+    <mat-card-title>
 
-        <mat-tab>
+        Manage Organization {{ (organizationsManageService.organization$ | async).name }}
 
-            <ng-template mat-tab-label>
+    </mat-card-title>
 
-                <mat-icon>security</mat-icon>
+    <mat-card-content>
 
-                Overview
+        <mat-tab-group class="demo-tab-group">
 
-            </ng-template>
+            <mat-tab>
 
-            <div class="tab-content">
+                <ng-template mat-tab-label>
 
-                <app-settings-organizations-manage-overview
-                ></app-settings-organizations-manage-overview>
+                    <mat-icon>security</mat-icon>
 
-            </div>
+                    Overview
 
-        </mat-tab>
+                </ng-template>
 
-        <mat-tab>
+                <div class="tab-content">
 
-            <ng-template mat-tab-label>
+                    <app-settings-organizations-manage-overview></app-settings-organizations-manage-overview>
 
-                <mat-icon>supervised_user_circle</mat-icon>
+                </div>
 
-                Users
+            </mat-tab>
 
-            </ng-template>
+            <mat-tab>
 
-            <div class="tab-content">
+                <ng-template mat-tab-label>
 
-                <app-settings-organizations-manage-users
-                ></app-settings-organizations-manage-users>
+                    <mat-icon>supervised_user_circle</mat-icon>
 
-            </div>
+                    Users
 
-        </mat-tab>
+                </ng-template>
 
-    </mat-tab-group>
+                <div class="tab-content">
+
+                    <app-settings-organizations-manage-users></app-settings-organizations-manage-users>
+
+                </div>
+
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button mat-raised-button color="warn">DELETE</button>
+
+    </mat-card-actions>
 
 </mat-card>

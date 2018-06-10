@@ -1,9 +1,10 @@
-import { Component, Input, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { OrganizationsService } from '../settings-organizations/OrganizationsService';
 import { DataTableComponent } from '../shared/lib/DataTableComponent';
 import { User } from '../settings-users/User';
 import { Organization } from '../settings-organizations/Organization';
 import { SettingsOrganizationManageService } from '../settings-organizations-manage/SettingsOrganizationManageService';
+import { Router } from '@angular/router';
 
 @Component({
 
@@ -12,7 +13,7 @@ import { SettingsOrganizationManageService } from '../settings-organizations-man
     styleUrls: ['./settings-organizations-manage-users.component.scss']
 
 })
-export class SettingsOrganizationsManageUsersComponent {
+export class SettingsOrganizationsManageUsersComponent implements OnInit {
 
     @ViewChild(DataTableComponent) private datatableRef: DataTableComponent<User>;
 
@@ -21,7 +22,8 @@ export class SettingsOrganizationsManageUsersComponent {
     @Input() public organizationId: Number;
 
     public constructor(public organizationsManageService: SettingsOrganizationManageService,
-                       private organizationsService: OrganizationsService) {
+                       private organizationsService: OrganizationsService,
+                       private router: Router) {
 
         this.organizationsManageService.organization$.subscribe((organization: Organization) => {
 
@@ -34,6 +36,20 @@ export class SettingsOrganizationsManageUsersComponent {
                     console.log(pageable);
 
                 });
+
+            }
+
+        });
+
+    }
+
+    public ngOnInit(): void {
+
+        this.datatableRef.clicks$.subscribe((user: User) => {
+
+            if (user.id) {
+
+                this.router.navigate([`/settings/users/${user.id}`]);
 
             }
 

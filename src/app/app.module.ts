@@ -46,9 +46,14 @@ import { CamerasManageOverviewComponent } from './cameras-manage-overview/camera
 import { CamerasManageSettingsComponent } from './cameras-manage-settings/cameras-manage-settings.component';
 import { CamerasManageLiveFeedComponent } from './cameras-manage-live-feed/cameras-manage-live-feed.component';
 import { CamerasManageComponent } from './cameras-manage/cameras-manage.component';
-import { SettingsUsersManageRolesManageComponent } from './settings-users-manage-roles-manage/settings-users-manage-roles-manage.component';
-import { SettingsUsersManageRolesCreateComponent } from './settings-users-manage-roles-create/settings-users-manage-roles-create.component';
-import { SettingsRolesService } from './settings-users-manage-roles/settings-roles.service';
+import { SettingsRolesService } from './settings-roles/settings-roles.service';
+import { SettingsRolesManageOverviewComponent } from './settings-roles-manage-overview/settings-roles-manage-overview.component';
+import { SettingsRolesManageUsersComponent } from './settings-roles-manage-users/settings-roles-manage-users.component';
+import { SettingsRolesManageService } from './settings-roles-manage/settings-roles-manage.service';
+import { CamerasManageService } from './cameras-manage/cameras-manage.service';
+import { CamerasManageSharingComponent } from './cameras-manage-sharing/cameras-manage-sharing.component';
+import { CamerasManagePlaybackComponent } from './cameras-manage-playback/cameras-manage-playback.component';
+import { CamerasCreateComponent } from './cameras-create/cameras-create.component';
 
 @NgModule({
 
@@ -82,8 +87,11 @@ import { SettingsRolesService } from './settings-users-manage-roles/settings-rol
         CamerasManageSettingsComponent,
         CamerasManageLiveFeedComponent,
         CamerasManageComponent,
-        SettingsUsersManageRolesManageComponent,
-        SettingsUsersManageRolesCreateComponent
+        SettingsRolesManageOverviewComponent,
+        SettingsRolesManageUsersComponent,
+        CamerasManageSharingComponent,
+        CamerasManagePlaybackComponent,
+        CamerasCreateComponent,
 
     ],
 
@@ -122,6 +130,11 @@ import { SettingsRolesService } from './settings-users-manage-roles/settings-rol
 
             path: 'cameras',
             component: CamerasComponent
+
+        }, {
+
+            path: 'cameras/connect',
+            component: CamerasCreateComponent
 
         }, {
 
@@ -200,12 +213,16 @@ import { SettingsRolesService } from './settings-users-manage-roles/settings-rol
         AppPageHeaderService,
 
         CamerasService,
+        CamerasManageService,
+
         UsersService,
         SessionService,
         OrganizationsService,
+
         SettingsOrganizationManageService,
         SettingsUsersManageService,
-        SettingsRolesService
+        SettingsRolesService,
+        SettingsRolesManageService,
 
     ],
 

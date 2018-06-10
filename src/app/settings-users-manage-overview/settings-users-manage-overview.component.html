@@ -2,6 +2,21 @@
 
     <tr>
 
+        <td>Organzation:</td>
+        <td>
+
+            <a [routerLink]="['/settings/organizations/' + (usersManageService.user$ | async).organization?.id]">
+
+                {{ (usersManageService.user$ | async).organization?.name }}
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    <tr>
+
         <td>Username:</td>
         <td>{{ (usersManageService.user$ | async).username }}</td>
 
@@ -14,7 +29,6 @@
 
     </tr>
 
-
     <tr>
 
         <td>First Name:</td>
@@ -22,14 +36,12 @@
 
     </tr>
 
-
     <tr>
 
         <td>Last Name:</td>
         <td>{{ (usersManageService.user$ | async).lastname }}</td>
 
     </tr>
-
 
     <tr>
 

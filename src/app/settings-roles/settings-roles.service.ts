@@ -12,20 +12,25 @@ export class SettingsRolesService extends APIClient<SettingsRole> {
 
     public getPageable(): Observable<Pageable<SettingsRole>> {
 
-        return super._getPageable<SettingsRole>(`settings/roles`);
+        return super._getPageable<SettingsRole>(`roles`);
 
     }
 
     public getById(userId: Number): Observable<SettingsRole> {
 
-        return this.get<SettingsRole>(`settings/roles/${userId}`);
+        return this.get<SettingsRole>(`roles/${userId}`);
 
     }
 
-
     public create(obj: SettingsRole): Observable<SettingsRole> {
 
-        return this.post<SettingsRole>(`settings/roles`, obj);
+        return this.post<SettingsRole>(`roles`, obj);
+
+    }
+
+    public deleteById(id: Number): Observable<void> {
+
+        return super.delete<void>(`roles/${id}`);
 
     }
 

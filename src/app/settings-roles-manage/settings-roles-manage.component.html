@@ -1,3 +1,59 @@
-<p>
-  settings-roles-manage works!
-</p>
+<mat-card>
+
+    <mat-card-title>
+
+        Manage Role {{ (rolesManageService.role$ | async).name }}
+
+    </mat-card-title>
+
+    <mat-card-content>
+
+        <mat-tab-group class="demo-tab-group">
+
+            <mat-tab>
+
+                <ng-template mat-tab-label>
+
+                    <mat-icon>security</mat-icon>
+
+                    Overview
+
+                </ng-template>
+
+                <div class="tab-content">
+
+                    <app-settings-roles-manage-overview></app-settings-roles-manage-overview>
+
+                </div>
+
+            </mat-tab>
+
+            <mat-tab>
+
+                <ng-template mat-tab-label>
+
+                    <mat-icon>account_box</mat-icon>
+
+                    Users
+
+                </ng-template>
+
+                <div class="tab-content">
+
+                    <app-settings-roles-manage-users></app-settings-roles-manage-users>
+
+                </div>
+
+            </mat-tab>
+
+        </mat-tab-group>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+
+        <button mat-raised-button color="warn" (click)="onButtonDeleteClick()">DELETE</button>
+
+    </mat-card-actions>
+
+</mat-card>

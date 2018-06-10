@@ -22,9 +22,9 @@ export class CamerasService extends APIClient<Camera> {
 
     }
 
-    public getById(organizationId: Number): Observable<Camera> {
+    public getById(cameraId: Number): Observable<Camera> {
 
-        return this.get<Camera>(`organizations/${organizationId}`);
+        return this.get<Camera>(`${CamerasService.URL_BASE}/${cameraId}`);
 
     }
 
@@ -33,4 +33,5 @@ export class CamerasService extends APIClient<Camera> {
         return this.post<Camera>(CamerasService.URL_BASE, obj);
 
     }
+
 }

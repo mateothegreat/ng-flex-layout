@@ -9,3 +9,16 @@ $theme-foreground-pink: #b42695;
 $theme-foreground-menu-sub: #fff;
 $theme-foreground: #fff;
 $theme-foreground-light: #eee;
+
+a, a:visited {
+
+    color: $theme-foreground-light;
+    text-decoration: none;
+
+}
+
+a:hover {
+
+    color: $theme-background-blue;
+
+}

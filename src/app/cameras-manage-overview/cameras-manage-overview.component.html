@@ -1,3 +1,31 @@
-<p>
-  cameras-manage-overview works!
-</p>
+<table>
+
+    <tr>
+
+        <td>Camera Name:</td>
+        <td>{{ (camerasManageService.camera$ | async).name }}</td>
+
+        <td>Organization:</td>
+        <td>
+
+            <a [routerLink]="['/settings/organizations/' + (camerasManageService.camera$ | async).organization?.id]">
+
+                {{ (camerasManageService.camera$ | async).organization?.name }}
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>Camera Description:</td>
+        <td>{{ (camerasManageService.camera$ | async).description }}</td>
+
+        <td>Camera Description:</td>
+        <td>{{ (camerasManageService.camera$ | async).description }}</td>
+
+    </tr>
+
+</table>

@@ -15,6 +15,7 @@ import { AppPageHeaderService } from '../app-page-header/app-page-header.service
 })
 export class CamerasComponent {
 
+    public static readonly PAGE_TITLE: string = 'Cameras';
     public static readonly PAGE_HEADER_BUTTONS: any[] = [{
 
         title: 'Connect Camera',

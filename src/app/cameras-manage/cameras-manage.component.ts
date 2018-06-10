@@ -1,15 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { CamerasManageService } from './cameras-manage.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+import { AppPageHeaderService } from '../app-page-header/app-page-header.service';
+import { CamerasComponent } from '../cameras/cameras.component';
 
 @Component({
-  selector: 'app-cameras-manage',
-  templateUrl: './cameras-manage.component.html',
-  styleUrls: ['./cameras-manage.component.scss']
+    selector: 'app-cameras-manage',
+    templateUrl: './cameras-manage.component.html',
+    styleUrls: ['./cameras-manage.component.scss']
 })
-export class CamerasManageComponent implements OnInit {
+export class CamerasManageComponent {
 
-  constructor() { }
+    public constructor(public camerasManageService: CamerasManageService,
+                       private router: Router,
+                       private route: ActivatedRoute,
+                       private toastr: ToastrService,
+                       private pageHeaderService: AppPageHeaderService) {
 
-  ngOnInit() {
-  }
+
+        pageHeaderService.headerTitle = 'Manage Camera';
+        pageHeaderService.buttons = CamerasComponent.PAGE_HEADER_BUTTONS;
+
+        this.route.params.subscribe((params) => {
+
+            if (params.id) {
+
+                this.camerasManageService.getCamera(params.id);
+
+            }
+
+        });
+
+    }
 
 }
