@@ -21,7 +21,6 @@ import { SettingsRolesManageComponent } from './settings-roles-manage/settings-r
 import { SettingsUsersManageComponent } from './settings-users-manage/settings-users-manage.component';
 import { HomeComponent } from './home/home.component';
 import { HomeDashboardComponent } from './home-dashboard/home-dashboard.component';
-import { AppFormButtonsComponent } from './app-form-buttons/app-form-buttons.component';
 import { MaterialModule } from './shared/MaterialModule';
 import { AppCardComponent } from './app-card/app-card.component';
 import { UsersService } from './settings-users/UsersService';
@@ -73,7 +72,6 @@ import { CamerasCreateComponent } from './cameras-create/cameras-create.componen
         SettingsUsersManageComponent,
         HomeComponent,
         HomeDashboardComponent,
-        AppFormButtonsComponent,
         AppCardComponent,
         SettingsOrganizationsComponent,
         SettingsOrganizationsManageComponent,

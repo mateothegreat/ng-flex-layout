@@ -4,6 +4,8 @@ import { CardComponent } from './card/card.component';
 import { MaterialModule } from './MaterialModule';
 import { DataTableComponent } from './lib/DataTableComponent';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
+import { AppFormButtonsComponent } from '../app-form-buttons/app-form-buttons.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
 
@@ -12,12 +14,15 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         CommonModule,
         MaterialModule,
         NgxDatatableModule,
+        RouterModule,
 
     ],
     declarations: [
 
         CardComponent,
-        DataTableComponent
+        DataTableComponent,
+        AppFormButtonsComponent,
+
 
     ],
     exports: [
@@ -26,7 +31,9 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
         MaterialModule,
         NgxDatatableModule,
 
-        DataTableComponent
+        DataTableComponent,
+        AppFormButtonsComponent,
+
 
     ]
 
