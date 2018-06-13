@@ -22,7 +22,6 @@ export class MonitoringConnectComponent {
 
     @ViewChild('address') private addressInput: ViewChild;
 
-
     public protocols: DeviceProtocol[] = DeviceProtocols.PROTOCOLS;
     public statuses: string[] = Statuses.STATUSES;
     public organizations: Organization[];
