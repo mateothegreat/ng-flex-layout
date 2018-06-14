@@ -6,6 +6,7 @@ import { DataTableComponent } from './lib/DataTableComponent';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { AppFormButtonsComponent } from '../app-form-buttons/app-form-buttons.component';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 
@@ -15,6 +16,7 @@ import { RouterModule } from '@angular/router';
         MaterialModule,
         NgxDatatableModule,
         RouterModule,
+        ReactiveFormsModule,
 
     ],
     declarations: [
@@ -30,6 +32,7 @@ import { RouterModule } from '@angular/router';
         CardComponent,
         MaterialModule,
         NgxDatatableModule,
+        ReactiveFormsModule,
 
         DataTableComponent,
         AppFormButtonsComponent,

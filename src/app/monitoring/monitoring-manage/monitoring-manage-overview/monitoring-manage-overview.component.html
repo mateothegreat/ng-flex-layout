@@ -1,3 +1,31 @@
-<p>
-  monitoring-manage-overview works!
-</p>
+<table>
+
+    <tr>
+
+        <td>Device Name:</td>
+        <td>{{ (monitoringManageService.device$ | async).name }}</td>
+
+        <td>Organization:</td>
+        <td>
+
+            <a [routerLink]="['/settings/organizations/' + (monitoringManageService.device$ | async).organization?.id]">
+
+                {{ (monitoringManageService.device$ | async).organization?.name }}
+
+            </a>
+
+        </td>
+
+    </tr>
+
+    <tr>
+
+        <td>Device Id:</td>
+        <td>{{ (monitoringManageService.device$ | async).id }}</td>
+
+        <td>Device Description:</td>
+        <td>{{ (monitoringManageService.device$ | async).description }}</td>
+
+    </tr>
+
+</table>

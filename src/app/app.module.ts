@@ -41,18 +41,14 @@ import { SettingsUsersManageService, } from './settings-users-manage/settings-us
 import { MediaModule } from './media/media.module';
 import { CamerasComponent } from './cameras/cameras.component';
 import { CamerasService } from './cameras/cameras.service';
-import { CamerasManageOverviewComponent } from './cameras-manage-overview/cameras-manage-overview.component';
-import { CamerasManageSettingsComponent } from './cameras-manage-settings/cameras-manage-settings.component';
-import { CamerasManageLiveFeedComponent } from './cameras-manage-live-feed/cameras-manage-live-feed.component';
 import { CamerasManageComponent } from './cameras-manage/cameras-manage.component';
 import { SettingsRolesService } from './settings-roles/settings-roles.service';
 import { SettingsRolesManageOverviewComponent } from './settings-roles-manage-overview/settings-roles-manage-overview.component';
 import { SettingsRolesManageUsersComponent } from './settings-roles-manage-users/settings-roles-manage-users.component';
 import { SettingsRolesManageService } from './settings-roles-manage/settings-roles-manage.service';
 import { CamerasManageService } from './cameras-manage/cameras-manage.service';
-import { CamerasManageSharingComponent } from './cameras-manage-sharing/cameras-manage-sharing.component';
-import { CamerasManagePlaybackComponent } from './cameras-manage-playback/cameras-manage-playback.component';
 import { CamerasCreateComponent } from './cameras-create/cameras-create.component';
+import { CamerasModule } from './cameras/cameras.module';
 
 @NgModule({
 
@@ -80,16 +76,10 @@ import { CamerasCreateComponent } from './cameras-create/cameras-create.componen
         SettingsOrganizationsManageUsersComponent,
         SettingsUsersManageOverviewComponent,
         SettingsUsersManageRolesComponent,
-        CamerasComponent,
-        CamerasManageOverviewComponent,
-        CamerasManageSettingsComponent,
-        CamerasManageLiveFeedComponent,
-        CamerasManageComponent,
+
         SettingsRolesManageOverviewComponent,
         SettingsRolesManageUsersComponent,
-        CamerasManageSharingComponent,
-        CamerasManagePlaybackComponent,
-        CamerasCreateComponent,
+
 
     ],
 
@@ -105,7 +95,7 @@ import { CamerasCreateComponent } from './cameras-create/cameras-create.componen
         SharedModule,
         MonitoringModule,
         MediaModule,
-        // CamerasModule,
+        CamerasModule,
         NgxDatatableModule,
         NgProgressModule,
         ToastrModule.forRoot({

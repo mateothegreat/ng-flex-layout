@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { MonitoringManageService } from '../monitoring-manage.service';
 
 @Component({
-  selector: 'app-monitoring-manage-overview',
-  templateUrl: './monitoring-manage-overview.component.html',
-  styleUrls: ['./monitoring-manage-overview.component.scss']
+    selector: 'app-monitoring-manage-overview',
+    templateUrl: './monitoring-manage-overview.component.html',
+    styleUrls: ['./monitoring-manage-overview.component.scss']
 })
-export class MonitoringManageOverviewComponent implements OnInit {
+export class MonitoringManageOverviewComponent {
 
-  constructor() { }
+    public constructor(public monitoringManageService: MonitoringManageService) {
 
-  ngOnInit() {
-  }
+
+    }
+
 
 }

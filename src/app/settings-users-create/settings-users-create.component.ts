@@ -36,9 +36,10 @@ export class SettingsUsersCreateComponent {
     public organizations: Organization[];
 
     public statuses: string[] = Statuses.STATUSES;
+    oublic
 
     public constructor(private pageHeaderService: AppPageHeaderService,
-                       private usersService: UsersService,
+                       public usersService: UsersService,
                        private organizationsService: OrganizationsService,
                        private router: Router,
                        private toastr: ToastrService) {

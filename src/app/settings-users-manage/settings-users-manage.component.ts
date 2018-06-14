@@ -16,7 +16,7 @@ export class SettingsUsersManageComponent implements OnInit {
     public constructor(private pageHeaderService: AppPageHeaderService,
                        private router: Router,
                        private route: ActivatedRoute,
-                       private usersManageService: SettingsUsersManageService) {
+                       public usersManageService: SettingsUsersManageService) {
 
         pageHeaderService.headerTitle = 'Manage Users';
         pageHeaderService.buttons = SettingsUsersComponent.PAGE_HEADER_BUTTONS;
