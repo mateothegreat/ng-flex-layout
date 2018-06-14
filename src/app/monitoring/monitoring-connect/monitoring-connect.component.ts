@@ -62,7 +62,7 @@ export class MonitoringConnectComponent {
 
             this.toastr.success(`The device "${monitoringDevice.name}" has been connected!`);
 
-            this.router.navigate([`/monitoring/${monitoringDevice.id}`]);
+            // this.router.navigate([`/monitoring/${monitoringDevice.id}`]);
 
         });
 

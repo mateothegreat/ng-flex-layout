@@ -29,7 +29,7 @@ export class MonitoringService extends APIClient<MonitoringDevice> {
 
     public create(obj: MonitoringDevice): Observable<MonitoringDevice> {
 
-        return this.post<MonitoringDevice>(MonitoringService.URL_BASE, obj);
+        return this.put<MonitoringDevice>(`${MonitoringService.URL_BASE}/hosts`, obj);
 
     }
 
