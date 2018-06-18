@@ -13,6 +13,8 @@ import { CamerasManageSharingComponent } from '../cameras-manage-sharing/cameras
 import { CamerasCreateComponent } from '../cameras-create/cameras-create.component';
 import { SharedModule } from '../shared/shared.module';
 import { MaterialModule } from '../shared/MaterialModule';
+import { AuthGuard } from '../shared/lib/AuthGuard';
+import { APIClient } from '../shared/lib/APIClient';
 
 @NgModule({
 
@@ -25,7 +27,8 @@ import { MaterialModule } from '../shared/MaterialModule';
         RouterModule.forChild([{
 
             path: 'cameras',
-            component: CamerasComponent
+            component: CamerasComponent,
+            canActivate: [AuthGuard]
 
         }])
 
@@ -48,6 +51,8 @@ import { MaterialModule } from '../shared/MaterialModule';
 
     providers: [
 
+        AuthGuard,
+        APIClient,
         CamerasService
 
     ]

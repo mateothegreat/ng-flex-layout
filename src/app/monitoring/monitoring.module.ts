@@ -11,6 +11,7 @@ import { MonitoringManageOverviewComponent } from './monitoring-manage/monitorin
 import { MonitoringManageSettingsComponent } from './monitoring-manage/monitoring-manage-settings/monitoring-manage-settings.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MonitoringManageService } from './monitoring-manage/monitoring-manage.service';
+import { AuthGuard } from '../shared/lib/AuthGuard';
 
 @NgModule({
 
@@ -23,17 +24,20 @@ import { MonitoringManageService } from './monitoring-manage/monitoring-manage.s
         RouterModule.forChild([{
 
             path: 'monitoring',
-            component: MonitoringComponent
+            component: MonitoringComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'monitoring/connect',
-            component: MonitoringConnectComponent
+            component: MonitoringConnectComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'monitoring/:id',
-            component: MonitoringManageComponent
+            component: MonitoringManageComponent,
+            canActivate: [AuthGuard]
 
         }])
 

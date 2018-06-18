@@ -49,6 +49,8 @@ import { SettingsRolesManageService } from './settings-roles-manage/settings-rol
 import { CamerasManageService } from './cameras-manage/cameras-manage.service';
 import { CamerasCreateComponent } from './cameras-create/cameras-create.component';
 import { CamerasModule } from './cameras/cameras.module';
+import { LoginComponent } from './login/login.component';
+import { AuthGuard } from './shared/lib/AuthGuard';
 
 @NgModule({
 
@@ -79,6 +81,7 @@ import { CamerasModule } from './cameras/cameras.module';
 
         SettingsRolesManageOverviewComponent,
         SettingsRolesManageUsersComponent,
+        LoginComponent,
 
 
     ],
@@ -112,72 +115,91 @@ import { CamerasModule } from './cameras/cameras.module';
         RouterModule.forRoot([{
 
             path: 'home',
-            component: HomeComponent
+            component: HomeComponent,
+            canActivate: [AuthGuard]
+
+        }, {
+
+            path: 'login',
+            component: LoginComponent,
 
         }, {
 
             path: 'cameras',
-            component: CamerasComponent
+            component: CamerasComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'cameras/connect',
-            component: CamerasCreateComponent
+            component: CamerasCreateComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'cameras/:id',
-            component: CamerasManageComponent
+            component: CamerasManageComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings',
-            component: SettingsComponent
+            component: SettingsComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/organizations',
-            component: SettingsOrganizationsComponent
+            component: SettingsOrganizationsComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/organizations/create',
-            component: SettingsOrganizationsCreateComponent
+            component: SettingsOrganizationsCreateComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/organizations/:id',
-            component: SettingsOrganizationsManageComponent
+            component: SettingsOrganizationsManageComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/users',
-            component: SettingsUsersComponent
+            component: SettingsUsersComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/users/create',
-            component: SettingsUsersCreateComponent
+            component: SettingsUsersCreateComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/users/:id',
-            component: SettingsUsersManageComponent
+            component: SettingsUsersManageComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/roles',
-            component: SettingsRolesComponent
+            component: SettingsRolesComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/roles/create',
-            component: SettingsRolesCreateComponent
+            component: SettingsRolesCreateComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
             path: 'settings/roles/:id',
-            component: SettingsRolesManageComponent
+            component: SettingsRolesManageComponent,
+            canActivate: [AuthGuard]
 
         }, {
 
@@ -196,6 +218,8 @@ import { CamerasModule } from './cameras/cameras.module';
             useClass: NgProgressInterceptor,
             multi: true
         },
+
+        AuthGuard,
 
         AppSidebarLeftService,
         AppPageHeaderService,

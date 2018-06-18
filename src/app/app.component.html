@@ -1,4 +1,10 @@
-<div class="flex-wrapper">
+<div *ngIf="!sessionService.isLoggedIn()">
+
+    <router-outlet></router-outlet>
+
+</div>
+
+<div *ngIf="sessionService.isLoggedIn()" class="flex-wrapper">
 
     <div class="header">
 
@@ -38,8 +44,12 @@
 
                         <mat-menu #menu="matMenu">
 
-                            <button mat-menu-item>Item 1</button>
-                            <button mat-menu-item>Item 2</button>
+                            <button mat-menu-item
+                                    (click)="sessionService.logout()">
+
+                                Logout
+                                
+                            </button>
 
                         </mat-menu>
 

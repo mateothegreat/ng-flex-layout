@@ -1,8 +1,9 @@
-import {APIClient} from './APIClient';
-import {Injectable} from '@angular/core';
-import {Observable} from 'rxjs';
-import {UserToken} from './UserToken';
-import {User} from '../../settings-users/User';
+import { APIClient } from './APIClient';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { UserToken } from './UserToken';
+import { User } from '../../settings-users/User';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class SessionService {
@@ -29,7 +30,8 @@ export class SessionService {
 
     private tokens: any;
 
-    public constructor(private apiClient: APIClient<User>) {
+    public constructor(private apiClient: APIClient<User>,
+                       private router: Router) {
 
         this.user = SessionService.storageGet();
 
@@ -59,6 +61,14 @@ export class SessionService {
             password
 
         });
+
+    }
+
+    public logout(): void {
+
+        SessionService.storageRemove();
+
+        location.href = '/login';
 
     }
 

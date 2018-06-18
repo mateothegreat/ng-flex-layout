@@ -1,0 +1,33 @@
+:host {
+
+    .select-add {
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        height: 50px;
+
+        padding: 10px;
+
+        p {
+
+            color: #fff;
+            width: 140px;
+            margin: 10px;
+
+            text-align: right;
+
+        }
+
+        mat-select {
+
+            background: #393940;
+            padding: 10px;
+            width: 250px;
+
+        }
+
+    }
+
+}
